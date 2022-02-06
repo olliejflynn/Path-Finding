@@ -1,6 +1,14 @@
-.App {
-  text-align: center;
+.App-day {
+  text-align: left;
+  background-color: rgb(255, 244, 255);
+  background-size: cover;
 }
+.App-night {
+  text-align: left;
+  background-color: rgb(70, 70, 70);
+  background-size: cover;
+}
+
 
 .App-logo {
   height: 40vmin;

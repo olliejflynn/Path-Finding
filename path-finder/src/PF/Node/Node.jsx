@@ -15,12 +15,9 @@ export default class Node extends Component {
       row,
     } = this.props;
     const extraClassName = isFinish
-      ? "target-node"
-      : isStart
-      ? "start-node"
-      : isWall
-      ? "node-wall"
-      : "";
+      ? "target-node" : isStart
+      ? "start-node" : isWall
+      ? "node-wall" : "";
 
     return (
       <div

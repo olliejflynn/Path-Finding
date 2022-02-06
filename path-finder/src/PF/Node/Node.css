@@ -1,7 +1,8 @@
 .node {
-  width: 25px;
-  height: 25px;
-  outline: 1px solid grey;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(94, 94, 94);
+  outline: 0.25px solid grey;
   display: inline-block;
 }
 
@@ -14,5 +15,5 @@
 }
 
 .node-wall {
-  background-color: rgb(12, 53, 71);
+  background-color: rgb(46, 46, 46);
 }

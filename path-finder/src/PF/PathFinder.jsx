@@ -3,10 +3,13 @@ import Node from "./Node/Node";
 
 import "./PathFinder.css";
 
-const START_NODE_R = 10;
-const START_NODE_C = 15;
-const FINISH_NODE_R = 10;
-const FINISH_NODE_C = 35;
+const GRID_HEIGHT = 30;
+const GRID_WIDTH = 45;
+
+const START_NODE_X = 3;
+const START_NODE_Y = 3;
+const FINISH_NODE_X = GRID_WIDTH - 4;
+const FINISH_NODE_Y = GRID_HEIGHT - 4;
 
 export default class PathFinder extends Component {
   constructor(props) {
@@ -43,7 +46,7 @@ export default class PathFinder extends Component {
 
     return (
       <>
-        <button>Dijkstra's</button>
+        <button>Clear Grid</button>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
@@ -76,9 +79,9 @@ export default class PathFinder extends Component {
 
 const setupGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < GRID_HEIGHT; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < GRID_WIDTH; col++) {
       currentRow.push(createNode(col, row));
     }
     grid.push(currentRow);
@@ -90,8 +93,8 @@ const createNode = (col, row) => {
   return {
     col,
     row,
-    isStart: row === START_NODE_R && col === START_NODE_C,
-    isFinish: row === FINISH_NODE_R && col === FINISH_NODE_C,
+    isStart: row === START_NODE_Y && col === START_NODE_X,
+    isFinish: row === FINISH_NODE_Y && col === FINISH_NODE_X,
     distance: Infinity,
     isVisited: false,
     isWall: false,
